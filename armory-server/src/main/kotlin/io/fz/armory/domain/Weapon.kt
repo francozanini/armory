@@ -1,6 +1,4 @@
-package io.fz.armory
-
-import Item
+package io.fz.armory.domain
 
 class Weapon private constructor(hitDice: Dices) : Item {
 

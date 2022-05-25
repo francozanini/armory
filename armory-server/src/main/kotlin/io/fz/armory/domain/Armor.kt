@@ -1,6 +1,4 @@
-package io.fz.armory
-
-import Item
+package io.fz.armory.domain
 
 class Armor(val ac: Int) : Item {
     companion object {

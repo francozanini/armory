@@ -1,6 +1,9 @@
 package io.fz.armory
 
-import PlayableCharacter
+import io.fz.armory.domain.Armor
+import io.fz.armory.domain.Attribute
+import io.fz.armory.domain.PlayableCharacter
+import io.fz.armory.domain.Weapon
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows

@@ -1,4 +1,4 @@
-package io.fz.armory
+package io.fz.armory.domain
 
 class Attribute(private val value: Int) {
     init {

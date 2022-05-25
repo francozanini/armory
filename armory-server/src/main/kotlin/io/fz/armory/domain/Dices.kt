@@ -1,4 +1,4 @@
-package io.fz.armory
+package io.fz.armory.domain
 
 class Dices(private val amountOfDices: Int, private val faces: Int) {
 

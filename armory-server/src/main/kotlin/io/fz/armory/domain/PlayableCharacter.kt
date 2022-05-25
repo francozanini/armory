@@ -1,6 +1,4 @@
-import io.fz.armory.Armor
-import io.fz.armory.Attribute
-import io.fz.armory.Weapon
+package io.fz.armory.domain
 
 class PlayableCharacter private constructor(
     private val name: String,
