@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class ServerApplication
+class ArmoryApplication
 
 fun main(args: Array<String>) {
-    runApplication<ServerApplication>(*args)
+    runApplication<ArmoryApplication>(*args)
 }
