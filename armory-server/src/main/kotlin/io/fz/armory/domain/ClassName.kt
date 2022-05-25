@@ -1,5 +1,6 @@
 package io.fz.armory.domain
 
 enum class ClassName {
-    FIGHTER
+    FIGHTER,
+    CLERIC
 }
