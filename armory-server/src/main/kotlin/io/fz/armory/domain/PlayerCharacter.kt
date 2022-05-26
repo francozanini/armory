@@ -1,6 +1,6 @@
 package io.fz.armory.domain
 
-class PlayableCharacter private constructor(
+class PlayerCharacter private constructor(
     private val name: String,
     val race: Race,
     val playableClass: ClassName,
@@ -94,10 +94,10 @@ class PlayableCharacter private constructor(
         equippedArmor = armorToEquip
     }
 
-    companion object CreatureCompanion {
+    companion object {
         const val NAME_CAN_NOT_BE_EMPTY = "Name can not be empty"
 
-        fun named(name: String, raceName: RaceName, className: ClassName, attributes: Attributes) = PlayableCharacter(
+        fun named(name: String, raceName: RaceName, className: ClassName, attributes: Attributes) = PlayerCharacter(
             name,
             attributes.str,
             attributes.dex,
@@ -117,7 +117,7 @@ class PlayableCharacter private constructor(
             intelligence: Int,
             wisdom: Int,
             charisma: Int
-        ) = PlayableCharacter(
+        ) = PlayerCharacter(
             name,
             Race.HUMAN,
             ClassName.FIGHTER,

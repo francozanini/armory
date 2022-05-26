@@ -1,6 +1,5 @@
-package io.fz.armory
+package io.fz.armory.domain
 
-import io.fz.armory.domain.Dices
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows

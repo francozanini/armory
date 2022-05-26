@@ -8,12 +8,14 @@ import reactor.core.publisher.Mono
 
 @RestController
 @RequestMapping("/playable-character")
-class PlayableCharacterController {
+class PlayerCharacterController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody @Valid createCharacterCommand: CreateCharacterDto): Publisher<CreateCharacterDto> {
         return Mono.just(createCharacterCommand)
     }
+
+    // dGpPlIe2HHSEf7RO
 }
 

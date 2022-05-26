@@ -1,14 +1,10 @@
-package io.fz.armory
+package io.fz.armory.domain
 
-import io.fz.armory.domain.Armor
-import io.fz.armory.domain.Attribute
-import io.fz.armory.domain.PlayableCharacter
-import io.fz.armory.domain.Weapon
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
-internal class PlayableCharacterTest {
+internal class PlayerCharacterTest {
 
     @Test
     fun canCreate() {
@@ -20,13 +16,13 @@ internal class PlayableCharacterTest {
 
     @Test
     fun canNotCreateWithEmptyName() {
-        val ex = assertThrows<RuntimeException> { PlayableCharacter.named("", 10, 15, 15, 16, 29, 19) }
-        assertThat(ex.message).isEqualTo(PlayableCharacter.NAME_CAN_NOT_BE_EMPTY)
+        val ex = assertThrows<RuntimeException> { PlayerCharacter.named("", 10, 15, 15, 16, 29, 19) }
+        assertThat(ex.message).isEqualTo(PlayerCharacter.NAME_CAN_NOT_BE_EMPTY)
     }
 
     @Test
     fun canNotCreateWithAttributesAboveRange() {
-        val ex = assertThrows<RuntimeException> { PlayableCharacter.named("abc", 21, 15, 15, 16, 29, 19) }
+        val ex = assertThrows<RuntimeException> { PlayerCharacter.named("abc", 21, 15, 15, 16, 29, 19) }
         assertThat(ex.message).isEqualTo(Attribute.ATTRIBUTE_OUT_OF_BOUNDS)
     }
 
@@ -80,9 +76,9 @@ internal class PlayableCharacterTest {
         assertThat(bashVonBlades.ac()).isEqualTo(13)
     }
 
-    private fun bashVonBlades() = PlayableCharacter.named("bash von blades", 10, 12, 10, 10, 10, 10)
+    private fun bashVonBlades() = PlayerCharacter.named("bash von blades", 10, 12, 10, 10, 10, 10)
 
-    private fun creatureNamed(name: String) = PlayableCharacter.named(name, 10, 10, 15, 16, 20, 1)
+    private fun creatureNamed(name: String) = PlayerCharacter.named(name, 10, 10, 15, 16, 20, 1)
 
     private fun bargus() = creatureNamed("Bargus")
 }
