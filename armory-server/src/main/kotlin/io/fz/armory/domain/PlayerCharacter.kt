@@ -12,6 +12,8 @@ class PlayerCharacter private constructor(
     charisma: Int
 ) {
 
+    var id: Long? = null
+
     constructor(
         name: String,
         strength: Int,
