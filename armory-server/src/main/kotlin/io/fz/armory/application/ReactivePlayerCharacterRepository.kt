@@ -6,5 +6,5 @@ import java.util.*
 
 interface ReactivePlayerCharacterRepository {
     fun save(newCharacter: PlayerCharacter): Mono<PlayerCharacter>
-    fun findById(idToLookFor: Long): Mono<Optional<PlayerCharacter>>
+    fun findById(idToLookFor: String): Mono<Optional<PlayerCharacter>>
 }

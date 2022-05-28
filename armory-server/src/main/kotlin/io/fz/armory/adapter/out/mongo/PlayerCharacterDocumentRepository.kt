@@ -1,4 +1,4 @@
-package io.fz.armory.adapter.out
+package io.fz.armory.adapter.out.mongo
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository
 import org.springframework.stereotype.Repository

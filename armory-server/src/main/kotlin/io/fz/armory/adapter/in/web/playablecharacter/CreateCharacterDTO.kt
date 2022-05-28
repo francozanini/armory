@@ -1,5 +1,6 @@
 package io.fz.armory.adapter.`in`.web.playablecharacter
 
+import io.fz.armory.domain.Attributes
 import io.fz.armory.domain.ClassName
 import io.fz.armory.domain.RaceName
 import jakarta.validation.constraints.NotBlank
@@ -19,4 +20,7 @@ data class AttributesDTO(
     @NotNull val int: Int,
     @NotNull val wis: Int,
     @NotNull val cha: Int
-)
+) {
+    fun toDomain(): Attributes = Attributes(str, dex, con, int, wis, cha)
+
+}

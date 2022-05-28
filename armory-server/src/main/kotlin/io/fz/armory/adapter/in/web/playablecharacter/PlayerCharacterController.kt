@@ -1,7 +1,6 @@
 package io.fz.armory.adapter.`in`.web.playablecharacter
 
-import io.fz.armory.adapter.out.PlayerCharacterDocument
-import io.fz.armory.adapter.out.PlayerCharacterDocumentRepository
+import io.fz.armory.application.PlayerCharacterService
 import jakarta.validation.Valid
 import org.reactivestreams.Publisher
 import org.springframework.beans.factory.annotation.Autowired
@@ -10,27 +9,17 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/playable-character")
-class PlayerCharacterController @Autowired constructor(val playerCharacterDocumentRepository: PlayerCharacterDocumentRepository) {
+class PlayerCharacterController @Autowired constructor(val playerCharacterService: PlayerCharacterService) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun create(@RequestBody @Valid createCharacterCommand: CreateCharacterDTO): Publisher<PlayerCharacterDocument> {
-        return playerCharacterDocumentRepository.save(
-            PlayerCharacterDocument(
-                null,
-                createCharacterCommand.name,
-                createCharacterCommand.race,
-                createCharacterCommand.className,
-                10,
-                10,
-                10,
-                10,
-                10,
-                10
-            )
-        )
+    fun create(@RequestBody @Valid createCharacterCommand: CreateCharacterDTO): Publisher<CharacterDetailsResponse> {
+        return playerCharacterService.create(
+            createCharacterCommand.name,
+            createCharacterCommand.race,
+            createCharacterCommand.className,
+            createCharacterCommand.attributes.toDomain()
+        ).map { CharacterDetailsResponse.fromDomain(it) }
     }
-
-    // dGpPlIe2HHSEf7RO
 }
 

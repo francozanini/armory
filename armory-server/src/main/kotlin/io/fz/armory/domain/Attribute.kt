@@ -5,6 +5,8 @@ class Attribute(private val value: Int) {
         if (value !in 0..20) throw RuntimeException(ATTRIBUTE_OUT_OF_BOUNDS)
     }
 
+    fun value() = value
+
     fun equals(valueToCompare: Int): Boolean = value == valueToCompare
 
     fun modifier(): Int {

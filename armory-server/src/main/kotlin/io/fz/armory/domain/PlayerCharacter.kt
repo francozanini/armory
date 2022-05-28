@@ -1,9 +1,10 @@
 package io.fz.armory.domain
 
 class PlayerCharacter private constructor(
+    var mongoId: String? = null,
     private val name: String,
     val race: Race,
-    val playableClass: ClassName,
+    val className: ClassName,
     strength: Int,
     dexterity: Int,
     constitution: Int,
@@ -12,9 +13,9 @@ class PlayerCharacter private constructor(
     charisma: Int
 ) {
 
-    var id: Long? = null
 
     constructor(
+        mongoId: String?,
         name: String,
         strength: Int,
         dexterity: Int,
@@ -24,6 +25,7 @@ class PlayerCharacter private constructor(
         charisma: Int,
         playableClass: ClassName, raceName: RaceName
     ) : this(
+        null,
         name,
         Race.named(raceName),
         playableClass,
@@ -55,6 +57,17 @@ class PlayerCharacter private constructor(
         items = arrayListOf()
         equippedArmor = Armor(10)
     }
+
+    fun mongoId(): String? = mongoId
+    fun name(): String = name
+    fun raceName(): RaceName = race.name
+    fun className(): ClassName = className
+    fun str(): Attribute = strength
+    fun dex(): Attribute = dexterity
+    fun con(): Attribute = constitution
+    fun int(): Attribute = intelligence
+    fun wis(): Attribute = wisdom
+    fun cha(): Attribute = charisma
 
     private fun assertNameNotEmpty() {
         if (name == "") throw RuntimeException(NAME_CAN_NOT_BE_EMPTY)
@@ -100,6 +113,7 @@ class PlayerCharacter private constructor(
         const val NAME_CAN_NOT_BE_EMPTY = "Name can not be empty"
 
         fun named(name: String, raceName: RaceName, className: ClassName, attributes: Attributes) = PlayerCharacter(
+            null,
             name,
             attributes.str,
             attributes.dex,
@@ -111,6 +125,20 @@ class PlayerCharacter private constructor(
             raceName
         )
 
+        fun named(mongoId: String?, name: String, raceName: RaceName, className: ClassName, attributes: Attributes) =
+            PlayerCharacter(
+                mongoId,
+                name,
+                attributes.str,
+                attributes.dex,
+                attributes.con,
+                attributes.int,
+                attributes.wis,
+                attributes.cha,
+                className,
+                raceName
+            )
+
         fun named(
             name: String,
             strength: Int,
@@ -120,6 +148,7 @@ class PlayerCharacter private constructor(
             wisdom: Int,
             charisma: Int
         ) = PlayerCharacter(
+            null,
             name,
             Race.HUMAN,
             ClassName.FIGHTER,
