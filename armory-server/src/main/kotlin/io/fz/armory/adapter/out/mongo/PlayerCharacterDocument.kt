@@ -7,7 +7,7 @@ import io.fz.armory.domain.RaceName
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 
-@Document(collection = "player_characters")
+@Document(collection = "playerCharacterDocument")
 class PlayerCharacterDocument(
     @Id var id: String?,
     var name: String,
@@ -23,7 +23,7 @@ class PlayerCharacterDocument(
 
     fun toDomain(): PlayerCharacter {
         return PlayerCharacter.named(
-            id,
+            mongoId = id,
             name,
             raceName,
             className,
