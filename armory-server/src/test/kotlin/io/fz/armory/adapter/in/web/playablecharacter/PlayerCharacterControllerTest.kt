@@ -1,5 +1,6 @@
 package io.fz.armory.adapter.`in`.web.playablecharacter
 
+import io.fz.armory.adapter.`in`.web.WebLayerTestConfig
 import io.fz.armory.application.PlayerCharacterService
 import io.fz.armory.application.ReactivePlayerCharacterRepository
 import io.fz.armory.domain.ClassName
@@ -7,19 +8,20 @@ import io.fz.armory.domain.RaceName
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest
-import org.springframework.boot.test.mock.mockito.MockBean
+import org.springframework.context.annotation.Import
 import org.springframework.http.MediaType
 import org.springframework.test.web.reactive.server.WebTestClient
 import org.springframework.web.reactive.function.BodyInserters
 
 
 @WebFluxTest(controllers = [PlayerCharacterController::class])
+@Import(WebLayerTestConfig::class)
 internal class PlayerCharacterControllerTest {
 
-    @MockBean
+    @Autowired
     lateinit var playerCharacterService: PlayerCharacterService
 
-    @MockBean
+    @Autowired
     lateinit var pcRepository: ReactivePlayerCharacterRepository
 
     @Autowired
