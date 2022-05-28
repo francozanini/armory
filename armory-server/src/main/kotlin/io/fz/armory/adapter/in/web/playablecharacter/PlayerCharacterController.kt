@@ -14,7 +14,7 @@ class PlayerCharacterController @Autowired constructor(val playerCharacterDocume
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun create(@RequestBody @Valid createCharacterCommand: CreateCharacterDto): Publisher<PlayerCharacterDocument> {
+    fun create(@RequestBody @Valid createCharacterCommand: CreateCharacterDTO): Publisher<PlayerCharacterDocument> {
         return playerCharacterDocumentRepository.save(
             PlayerCharacterDocument(
                 null,

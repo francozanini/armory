@@ -4,10 +4,12 @@ import io.fz.armory.domain.Attributes
 import io.fz.armory.domain.ClassName
 import io.fz.armory.domain.PlayerCharacter
 import io.fz.armory.domain.RaceName
+import reactor.core.publisher.Mono
 
-class PlayerCharacterService(val playerCharacterRepository: PlayerCharacterRepository) {
-    fun create(name: String, race: RaceName, className: ClassName, attributes: Attributes): PlayerCharacter {
-        val characterToCreate = PlayerCharacter.named(name, race, className, attributes)
-        return playerCharacterRepository.create(characterToCreate)
+class PlayerCharacterService(private val reactivePlayerCharacterRepository: ReactivePlayerCharacterRepository) {
+    fun create(name: String, race: RaceName, className: ClassName, attributes: Attributes): Mono<PlayerCharacter> {
+        return Mono
+            .just(PlayerCharacter.named(name, race, className, attributes))
+            .flatMap { pc -> reactivePlayerCharacterRepository.save(pc) }
     }
 }
