@@ -30,7 +30,7 @@ internal class PlayerCharacterControllerTest {
     @Test
     fun create() {
         val createCharacterDTO =
-            CreateCharacterDTO("Aristos", ClassName.FIGHTER, RaceName.HUMAN, AttributesDTO(15, 12, 14, 8, 10, 12))
+            CreateCharacterCommand("Aristos", ClassName.FIGHTER, RaceName.HUMAN, AttributesDTO(15, 12, 14, 8, 10, 12))
 
         this.webClient
             .post()

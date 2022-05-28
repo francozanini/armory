@@ -13,7 +13,7 @@ class PlayerCharacterController @Autowired constructor(val playerCharacterServic
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun create(@RequestBody @Valid createCharacterCommand: CreateCharacterDTO): Publisher<CharacterDetailsResponse> {
+    fun create(@RequestBody @Valid createCharacterCommand: CreateCharacterCommand): Publisher<CharacterDetailsResponse> {
         return playerCharacterService.create(
             createCharacterCommand.name,
             createCharacterCommand.race,
