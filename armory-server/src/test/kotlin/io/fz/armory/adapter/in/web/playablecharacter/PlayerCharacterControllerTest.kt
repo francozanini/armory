@@ -36,7 +36,7 @@ internal class PlayerCharacterControllerTest {
             .post()
             .uri("/playable-character")
             .contentType(MediaType.APPLICATION_JSON)
-            .body(BodyInserters.fromObject(createCharacterDTO))
+            .body(BodyInserters.fromValue(createCharacterDTO))
             .exchange()
             .expectStatus().isCreated
     }
