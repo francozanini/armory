@@ -25,7 +25,7 @@ class PlayerCharacter private constructor(
         charisma: Int,
         playableClass: ClassName, raceName: RaceName
     ) : this(
-        null,
+        mongoId,
         name,
         Race.named(raceName),
         playableClass,
