@@ -3,8 +3,8 @@ package io.fz.armory.domain
 class PlayerCharacter private constructor(
     var mongoId: String? = null,
     private val name: String,
-    val race: Race,
-    val className: ClassName,
+    private val race: Race,
+    private val className: ClassName,
     strength: Int,
     dexterity: Int,
     constitution: Int,
@@ -14,6 +14,7 @@ class PlayerCharacter private constructor(
 ) {
 
 
+    // TODO: Try to refactor constructors and static constructors to use named params instead of overloading.
     constructor(
         mongoId: String?,
         name: String,
