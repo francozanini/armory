@@ -1,45 +1,37 @@
-import { useState } from 'react'
-import logo from './logo.svg'
+import {Center, Container, Flex, FormControl, FormLabel, Input, Select, Spacer} from '@chakra-ui/react'
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+    return (
+        <Container centerContent>
+            <Flex alignItems={"center"} justifyContent={"center"}>
+                <Center>
+                    <FormControl>
+                        <FormLabel>First name</FormLabel>
+                        <Input placeholder=' '/>
+                    </FormControl>
+                    <Spacer/>
+                    <FormControl>
+                        <FormLabel>Class</FormLabel>
+                        <Select placeholder=' '>
+                            <option value='option1'>Option 1</option>
+                            <option value='option2'>Option 2</option>
+                            <option value='option3'>Option 3</option>
+                        </Select>
+                    </FormControl>
+                    <Spacer/>
+                    <FormControl>
+                        <FormLabel>Race</FormLabel>
+                        <Select placeholder=' '>
+                            <option value='option1'>Option 1</option>
+                            <option value='option2'>Option 2</option>
+                            <option value='option3'>Option 3</option>
+                        </Select>
+                    </FormControl>
+                </Center>
+            </Flex>
+        </Container>)
 }
 
 export default App
