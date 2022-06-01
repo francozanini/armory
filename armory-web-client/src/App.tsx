@@ -1,36 +1,32 @@
-import {Center, Container, Flex, FormControl, FormLabel, Input, Select, Spacer} from '@chakra-ui/react'
+import {Box, Container, Flex, FormControl, FormLabel, Input, Select} from '@chakra-ui/react'
 
 import './App.css'
 
 function App() {
     return (
-        <Container centerContent>
-            <Flex alignItems={"center"} justifyContent={"center"}>
-                <Center>
+        <Container>
+            <Box m={[2, 3]} borderRadius='lg' shadow={"xl"}>
+                <Flex m={[2, 3]} gap={5} flexDirection={"column"}>
                     <FormControl>
-                        <FormLabel>First name</FormLabel>
+                        <FormLabel>Name</FormLabel>
                         <Input placeholder=' '/>
                     </FormControl>
-                    <Spacer/>
                     <FormControl>
                         <FormLabel>Class</FormLabel>
                         <Select placeholder=' '>
-                            <option value='option1'>Option 1</option>
-                            <option value='option2'>Option 2</option>
-                            <option value='option3'>Option 3</option>
+                            <option value='fighter'>Fighter</option>
+                            <option value='cleric'>Cleric</option>
                         </Select>
                     </FormControl>
-                    <Spacer/>
                     <FormControl>
                         <FormLabel>Race</FormLabel>
                         <Select placeholder=' '>
-                            <option value='option1'>Option 1</option>
-                            <option value='option2'>Option 2</option>
-                            <option value='option3'>Option 3</option>
+                            <option value='human'>Human</option>
+                            <option value='dwarf'>Dwarf</option>
                         </Select>
                     </FormControl>
-                </Center>
-            </Flex>
+                </Flex>
+            </Box>
         </Container>)
 }
 
