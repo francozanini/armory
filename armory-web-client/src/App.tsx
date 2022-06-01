@@ -5,7 +5,7 @@ import './App.css'
 function App() {
     return (
         <Container>
-            <Box m={[2, 3]} borderRadius='lg' shadow={"xl"}>
+            <Box background={"blackAlpha.600"} m={[2, 3]} borderRadius='lg' shadow={"xl"}>
                 <Flex m={[2, 3]} gap={5} flexDirection={"column"}>
                     <FormControl>
                         <FormLabel>Name</FormLabel>
