@@ -82,8 +82,8 @@ const Abilities = () => {
     const abilities = [Ability.STR, Ability.DEX, Ability.CON, Ability.INT, Ability.WIS, Ability.CHA]
 
     return (
-        <TableContainer>
-            <Table>
+        <TableContainer overflow={"hidden"}>
+            <Table fontSize={"sm"}>
                 <Thead>
                     <Tr>
                         <Th>Ability</Th>
