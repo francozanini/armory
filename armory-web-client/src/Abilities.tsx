@@ -1,8 +1,9 @@
 import {Ability} from "./Ability";
 import {Table, TableContainer, Tbody, Th, Thead, Tr} from "@chakra-ui/react";
 import {AbilityRow} from "./AbilityRow";
+import {withBlackBox} from "./WithBlackBox";
 
-export const Abilities = () => {
+const Abilities = () => {
     const abilities = [Ability.STR, Ability.DEX, Ability.CON, Ability.INT, Ability.WIS, Ability.CHA]
 
     return (
@@ -24,3 +25,5 @@ export const Abilities = () => {
         </TableContainer>
     )
 }
+
+export default withBlackBox(Abilities)

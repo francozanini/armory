@@ -1,7 +1,8 @@
 import {FormControl, FormLabel, Select} from "@chakra-ui/react";
 import React from "react";
+import {withBlackBox} from "./WithBlackBox";
 
-export default function CharacterRaceForm() {
+function CharacterRaceForm() {
     return (
         <FormControl>
             <FormLabel>Race</FormLabel>
@@ -12,3 +13,5 @@ export default function CharacterRaceForm() {
         </FormControl>
     )
 }
+
+export default withBlackBox(CharacterRaceForm)

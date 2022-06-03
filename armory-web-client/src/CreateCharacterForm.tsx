@@ -1,6 +1,5 @@
 import {Tab, TabList, TabPanel, TabPanels, Tabs} from "@chakra-ui/react";
-import {BlackBox} from "./BlackBox";
-import {Abilities} from "./Abilities";
+import Abilities from "./Abilities";
 import React from "react";
 import CharacterClassForm from "./CharacterClassForm";
 import CharacterRaceForm from "./CharacterRaceForm";
@@ -16,24 +15,16 @@ export function CreateCharacterForm() {
         </TabList>
         <TabPanels>
             <TabPanel>
-                <BlackBox>
-                    <CharacterDetailsForm/>
-                </BlackBox>
+                <CharacterDetailsForm/>
             </TabPanel>
             <TabPanel>
-                <BlackBox>
-                    <CharacterRaceForm/>
-                </BlackBox>
+                <CharacterRaceForm/>
             </TabPanel>
             <TabPanel>
-                <BlackBox>
-                    <CharacterClassForm/>
-                </BlackBox>
+                <CharacterClassForm/>
             </TabPanel>
             <TabPanel>
-                <BlackBox>
-                    <Abilities/>
-                </BlackBox>
+                <Abilities/>
             </TabPanel>
         </TabPanels>
     </Tabs>;
