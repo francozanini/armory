@@ -1,7 +1,10 @@
-import {FormControl, FormLabel, Input, Select, Tab, TabList, TabPanel, TabPanels, Tabs} from "@chakra-ui/react";
+import {Tab, TabList, TabPanel, TabPanels, Tabs} from "@chakra-ui/react";
 import {BlackBox} from "./BlackBox";
 import {Abilities} from "./Abilities";
 import React from "react";
+import CharacterClassForm from "./CharacterClassForm";
+import CharacterRaceForm from "./CharacterRaceForm";
+import CharacterDetailsForm from "./CharacterDetailsForm";
 
 export function CreateCharacterForm() {
     return <Tabs>
@@ -14,32 +17,17 @@ export function CreateCharacterForm() {
         <TabPanels>
             <TabPanel>
                 <BlackBox>
-                    <FormControl>
-                        <FormLabel>Name</FormLabel>
-                        <Input placeholder=" "/>
-                    </FormControl>
+                    <CharacterDetailsForm/>
                 </BlackBox>
             </TabPanel>
             <TabPanel>
                 <BlackBox>
-                    <FormControl>
-                        <FormLabel>Race</FormLabel>
-                        <Select placeholder=" ">
-                            <option value="human">Human</option>
-                            <option value="dwarf">Dwarf</option>
-                        </Select>
-                    </FormControl>
+                    <CharacterRaceForm/>
                 </BlackBox>
             </TabPanel>
             <TabPanel>
                 <BlackBox>
-                    <FormControl>
-                        <FormLabel>Class</FormLabel>
-                        <Select placeholder=" ">
-                            <option value="fighter">Fighter</option>
-                            <option value="cleric">Cleric</option>
-                        </Select>
-                    </FormControl>
+                    <CharacterClassForm/>
                 </BlackBox>
             </TabPanel>
             <TabPanel>
