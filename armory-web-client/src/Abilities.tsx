@@ -18,7 +18,7 @@ export const Abilities = () => {
                 </Thead>
                 <Tbody>
                     {abilities.map(ability =>
-                        (<AbilityRow ability={ability}/>))}
+                        (<AbilityRow key={ability.name} ability={ability}/>))}
                 </Tbody>
             </Table>
         </TableContainer>
