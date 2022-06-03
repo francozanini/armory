@@ -1,7 +1,8 @@
 import {FormControl, FormLabel, Select} from "@chakra-ui/react";
 import React from "react";
+import {withBlackBox} from "./WithBlackBox";
 
-export default function CharacterClassForm() {
+function CharacterClassForm() {
     return <FormControl>
         <FormLabel>Class</FormLabel>
         <Select placeholder=" ">
@@ -10,3 +11,5 @@ export default function CharacterClassForm() {
         </Select>
     </FormControl>;
 }
+
+export default withBlackBox(CharacterClassForm);
