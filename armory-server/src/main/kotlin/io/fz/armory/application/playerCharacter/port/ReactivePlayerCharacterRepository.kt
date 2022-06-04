@@ -1,4 +1,4 @@
-package io.fz.armory.application.playerCharacter
+package io.fz.armory.application.playerCharacter.port
 
 import io.fz.armory.domain.PlayerCharacter
 import reactor.core.publisher.Mono

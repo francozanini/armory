@@ -1,6 +1,6 @@
 package io.fz.armory.adapter.`in`.web.race
 
-import io.fz.armory.application.race.RaceRepository
+import io.fz.armory.application.race.port.RaceRepository
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping

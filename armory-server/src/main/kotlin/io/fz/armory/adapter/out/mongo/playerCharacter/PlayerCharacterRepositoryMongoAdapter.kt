@@ -1,6 +1,6 @@
 package io.fz.armory.adapter.out.mongo.playerCharacter
 
-import io.fz.armory.application.playerCharacter.ReactivePlayerCharacterRepository
+import io.fz.armory.application.playerCharacter.port.ReactivePlayerCharacterRepository
 import io.fz.armory.domain.PlayerCharacter
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
