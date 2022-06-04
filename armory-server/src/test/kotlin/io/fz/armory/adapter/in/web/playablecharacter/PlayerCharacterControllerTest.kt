@@ -1,6 +1,6 @@
 package io.fz.armory.adapter.`in`.web.playablecharacter
 
-import io.fz.armory.adapter.`in`.web.WebLayerTestConfig
+import io.fz.armory.adapter.`in`.web.config.WebLayerTestConfig
 import io.fz.armory.application.playerCharacter.PlayerCharacterService
 import io.fz.armory.application.playerCharacter.port.ReactivePlayerCharacterRepository
 import io.fz.armory.domain.ClassName

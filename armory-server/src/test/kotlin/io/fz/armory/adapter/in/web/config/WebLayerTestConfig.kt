@@ -1,4 +1,4 @@
-package io.fz.armory.adapter.`in`.web
+package io.fz.armory.adapter.`in`.web.config
 
 import io.fz.armory.adapter.out.memory.InMemoryReactivePlayerCharacterRepository
 import io.fz.armory.application.playerCharacter.PlayerCharacterService
