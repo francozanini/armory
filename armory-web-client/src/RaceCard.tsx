@@ -8,8 +8,9 @@ export function RaceCard({race, styles}: { race: Race, styles?: React.CSSPropert
     return <Box background={"blackAlpha.600"}
                 p={[0.5]}
                 borderRadius="lg"
-                flexBasis={["xl", "3xl", "4xl"]}
+                flexBasis={["xl", "3xl", "4xl", "5xl"]}
                 style={styles}
+                cursor={"pointer"}
     >
         <Flex flexDirection={"row"} ml={3} alignItems={"center"}>
             <Image boxSize="50px"
