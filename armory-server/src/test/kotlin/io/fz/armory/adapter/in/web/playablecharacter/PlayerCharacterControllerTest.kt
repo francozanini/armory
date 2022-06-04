@@ -34,7 +34,7 @@ internal class PlayerCharacterControllerTest {
 
         this.webClient
             .post()
-            .uri("/playable-character")
+            .uri("/player-characters")
             .contentType(MediaType.APPLICATION_JSON)
             .body(BodyInserters.fromValue(createCharacterDTO))
             .exchange()
