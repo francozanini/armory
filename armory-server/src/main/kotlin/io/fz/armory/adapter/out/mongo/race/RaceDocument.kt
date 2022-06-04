@@ -7,10 +7,10 @@ import org.springframework.data.mongodb.core.mapping.Document
 
 @Document
 class RaceDocument(
-    @Id var mongoId: String?,
+    @Id var id: String?,
     var name: RaceName,
     var avatarUrl: String = "",
     var sourceBook: String = ""
 ) {
-    fun toDomain(): Race = Race.named(name, avatarUrl, sourceBook)
+    fun toDomain(): Race = Race.named(name, id, avatarUrl, sourceBook)
 }
