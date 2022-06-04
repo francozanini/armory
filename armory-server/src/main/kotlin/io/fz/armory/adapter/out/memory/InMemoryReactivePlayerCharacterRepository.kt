@@ -1,6 +1,6 @@
 package io.fz.armory.adapter.out.memory
 
-import io.fz.armory.application.ReactivePlayerCharacterRepository
+import io.fz.armory.application.playerCharacter.ReactivePlayerCharacterRepository
 import io.fz.armory.domain.PlayerCharacter
 import reactor.core.publisher.Mono
 import java.util.*

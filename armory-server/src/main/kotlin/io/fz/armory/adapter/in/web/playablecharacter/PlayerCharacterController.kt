@@ -1,6 +1,6 @@
 package io.fz.armory.adapter.`in`.web.playablecharacter
 
-import io.fz.armory.application.PlayerCharacterService
+import io.fz.armory.application.playerCharacter.PlayerCharacterService
 import jakarta.validation.Valid
 import org.reactivestreams.Publisher
 import org.springframework.beans.factory.annotation.Autowired
@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/playable-character")
+@RequestMapping("/playable-characters")
 class PlayerCharacterController @Autowired constructor(val playerCharacterService: PlayerCharacterService) {
 
     @PostMapping

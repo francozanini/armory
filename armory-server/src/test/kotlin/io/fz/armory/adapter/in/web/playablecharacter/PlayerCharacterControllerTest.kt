@@ -1,8 +1,8 @@
 package io.fz.armory.adapter.`in`.web.playablecharacter
 
 import io.fz.armory.adapter.`in`.web.WebLayerTestConfig
-import io.fz.armory.application.PlayerCharacterService
-import io.fz.armory.application.ReactivePlayerCharacterRepository
+import io.fz.armory.application.playerCharacter.PlayerCharacterService
+import io.fz.armory.application.playerCharacter.ReactivePlayerCharacterRepository
 import io.fz.armory.domain.ClassName
 import io.fz.armory.domain.RaceName
 import org.junit.jupiter.api.Test

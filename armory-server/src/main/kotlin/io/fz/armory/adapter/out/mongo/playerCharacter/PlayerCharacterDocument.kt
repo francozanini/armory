@@ -1,4 +1,4 @@
-package io.fz.armory.adapter.out.mongo
+package io.fz.armory.adapter.out.mongo.playerCharacter
 
 import io.fz.armory.domain.Attributes
 import io.fz.armory.domain.ClassName

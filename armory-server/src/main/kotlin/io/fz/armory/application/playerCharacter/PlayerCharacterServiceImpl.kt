@@ -1,4 +1,4 @@
-package io.fz.armory.application
+package io.fz.armory.application.playerCharacter
 
 import io.fz.armory.domain.Attributes
 import io.fz.armory.domain.ClassName
