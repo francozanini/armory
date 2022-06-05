@@ -12,5 +12,6 @@ class RaceDocument(
     var avatarUrl: String = "",
     var sourceBook: String = ""
 ) {
-    fun toDomain(): Race = Race.named(name, id, avatarUrl, sourceBook)
+    fun toDomain(): Race = Race.named(name, id, sourceBook, avatarUrl)
+    override fun toString(): String = "id = $id, name = $name"
 }
