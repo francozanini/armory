@@ -2,7 +2,7 @@ package io.fz.armory.adapter.`in`.web.playablecharacter
 
 import io.fz.armory.adapter.`in`.web.config.WebLayerTestConfig
 import io.fz.armory.application.playerCharacter.PlayerCharacterService
-import io.fz.armory.application.playerCharacter.port.ReactivePlayerCharacterRepository
+import io.fz.armory.application.playerCharacter.port.PlayerCharacterRepository
 import io.fz.armory.domain.ClassName
 import io.fz.armory.domain.RaceName
 import org.junit.jupiter.api.Test
@@ -22,7 +22,7 @@ internal class PlayerCharacterControllerTest {
     lateinit var playerCharacterService: PlayerCharacterService
 
     @Autowired
-    lateinit var pcRepository: ReactivePlayerCharacterRepository
+    lateinit var pcRepository: PlayerCharacterRepository
 
     @Autowired
     lateinit var webClient: WebTestClient

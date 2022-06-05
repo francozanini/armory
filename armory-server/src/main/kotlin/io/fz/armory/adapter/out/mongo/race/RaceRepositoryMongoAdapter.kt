@@ -16,4 +16,11 @@ class RaceRepositoryMongoAdapter(val raceDocumentRepository: RaceDocumentReposit
         return raceDocumentRepository.findById(id).map { it.toDomain() }
     }
 
+    override fun save(raceToSave: Race): Mono<Race> {
+        return Mono
+            .just(RaceDocument.from(raceToSave))
+            .flatMap { raceDocumentRepository.save(it) }
+            .map { it.toDomain() }
+    }
+
 }

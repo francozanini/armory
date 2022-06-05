@@ -1,12 +1,12 @@
 package io.fz.armory.adapter.out.memory
 
-import io.fz.armory.application.playerCharacter.port.ReactivePlayerCharacterRepository
+import io.fz.armory.application.playerCharacter.port.PlayerCharacterRepository
 import io.fz.armory.domain.PlayerCharacter
 import reactor.core.publisher.Mono
 import java.util.*
 import java.util.concurrent.atomic.AtomicLong
 
-class InMemoryReactivePlayerCharacterRepository : ReactivePlayerCharacterRepository {
+class InMemoryPlayerCharacterRepository : PlayerCharacterRepository {
     private val characters: HashMap<String, PlayerCharacter> = HashMap()
     private val sequence: AtomicLong = AtomicLong(0)
 

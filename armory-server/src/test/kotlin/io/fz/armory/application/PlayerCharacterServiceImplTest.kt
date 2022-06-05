@@ -1,8 +1,8 @@
 package io.fz.armory.application
 
-import io.fz.armory.adapter.out.memory.InMemoryReactivePlayerCharacterRepository
+import io.fz.armory.adapter.out.memory.InMemoryPlayerCharacterRepository
 import io.fz.armory.application.playerCharacter.PlayerCharacterServiceImpl
-import io.fz.armory.application.playerCharacter.port.ReactivePlayerCharacterRepository
+import io.fz.armory.application.playerCharacter.port.PlayerCharacterRepository
 import io.fz.armory.domain.Attributes
 import io.fz.armory.domain.ClassName
 import io.fz.armory.domain.RaceName
@@ -13,12 +13,12 @@ import reactor.test.StepVerifier
 
 internal class PlayerCharacterServiceImplTest {
 
-    private lateinit var reactivePlayerCharacterRepository: ReactivePlayerCharacterRepository
+    private lateinit var reactivePlayerCharacterRepository: PlayerCharacterRepository
     private lateinit var playerCharacterServiceImpl: PlayerCharacterServiceImpl
 
     @BeforeEach
     fun setUp() {
-        reactivePlayerCharacterRepository = InMemoryReactivePlayerCharacterRepository()
+        reactivePlayerCharacterRepository = InMemoryPlayerCharacterRepository()
         playerCharacterServiceImpl = PlayerCharacterServiceImpl(reactivePlayerCharacterRepository)
     }
 

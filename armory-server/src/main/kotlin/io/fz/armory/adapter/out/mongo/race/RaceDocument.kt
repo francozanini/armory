@@ -14,4 +14,14 @@ class RaceDocument(
 ) {
     fun toDomain(): Race = Race.named(name, id, sourceBook, avatarUrl)
     override fun toString(): String = "id = $id, name = $name"
+
+    companion object {
+        fun from(raceToSave: Race): RaceDocument =
+            RaceDocument(
+                id = raceToSave.mongoId,
+                name = raceToSave.name,
+                avatarUrl = raceToSave.avatarUrl,
+                sourceBook = raceToSave.sourceBook
+            )
+    }
 }

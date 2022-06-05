@@ -1,6 +1,6 @@
 package io.fz.armory.adapter.out.mongo.playerCharacter
 
-import io.fz.armory.application.playerCharacter.port.ReactivePlayerCharacterRepository
+import io.fz.armory.application.playerCharacter.port.PlayerCharacterRepository
 import io.fz.armory.domain.PlayerCharacter
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
@@ -9,7 +9,7 @@ import java.util.*
 
 @Service
 class PlayerCharacterRepositoryMongoAdapter @Autowired constructor(private val pcDocumentRepository: PlayerCharacterDocumentRepository) :
-    ReactivePlayerCharacterRepository {
+    PlayerCharacterRepository {
 
     override fun save(newCharacter: PlayerCharacter): Mono<PlayerCharacter> {
         return Mono.just(newCharacter)
