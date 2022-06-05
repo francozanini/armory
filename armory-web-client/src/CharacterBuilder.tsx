@@ -2,10 +2,10 @@ import {Tab, TabList, TabPanel, TabPanels, Tabs} from "@chakra-ui/react";
 import Abilities from "./Abilities";
 import React from "react";
 import CharacterClassForm from "./CharacterClassForm";
-import CharacterRaceForm from "./CharacterRaceForm";
+import RaceSelection from "./RaceSelection";
 import CharacterDetailsForm from "./CharacterDetailsForm";
 
-export function CreateCharacterForm() {
+export function CharacterBuilder() {
     return <Tabs>
         <TabList>
             <Tab>Details</Tab>
@@ -18,7 +18,7 @@ export function CreateCharacterForm() {
                 <CharacterDetailsForm/>
             </TabPanel>
             <TabPanel>
-                <CharacterRaceForm/>
+                <RaceSelection/>
             </TabPanel>
             <TabPanel>
                 <CharacterClassForm/>

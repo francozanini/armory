@@ -1,10 +1,10 @@
 import './App.css'
 import React from "react";
-import {CreateCharacterForm} from "./CreateCharacterForm";
+import {CharacterBuilder} from "./CharacterBuilder";
 
 function App() {
     return (
-        <CreateCharacterForm/>)
+        <CharacterBuilder/>)
 
 }
 
