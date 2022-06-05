@@ -14,6 +14,7 @@ import {
     ModalOverlay,
     useDisclosure
 } from "@chakra-ui/react";
+import axios from "axios";
 
 export function RaceCard({race, styles}: { race: Race, styles?: React.CSSProperties }) {
     const {id, raceName, avatarUrl, sourceBook} = race;
@@ -46,9 +47,8 @@ export function RaceCard({race, styles}: { race: Race, styles?: React.CSSPropert
 function RaceSelectionModal({raceId, isOpen, onClose}: { raceId: string, isOpen: boolean, onClose: () => void }) {
     const [race, setRace] = useState<Race>();
     useEffect(() => {
-            fetch(`http://localhost:8080/races/${raceId}`)
-                .then(response => response.json())
-                .then(setRace)
+            axios.get<Race>(`http://localhost:8080/races/${raceId}`)
+                .then(response => setRace(response.data))
         }
     )
 

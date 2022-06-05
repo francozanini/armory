@@ -2,13 +2,13 @@ import React, {useEffect, useState} from "react";
 import {Center} from "@chakra-ui/react";
 import {Race} from "./Race";
 import {RaceCard} from "./RaceCard";
+import axios from "axios";
 
 function RaceSelection() {
     const [races, setRaces] = useState<Race[]>([]);
     useEffect(() => {
-        fetch("http://localhost:8080/races")
-            .then(resp => resp.json())
-            .then(setRaces);
+        axios.get<Race[]>("http://localhost:8080/races")
+            .then(resp => setRaces(resp.data));
     }, []);
 
     return (
