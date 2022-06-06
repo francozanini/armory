@@ -14,7 +14,7 @@ function RaceSelection() {
     return (
         <>
             <Center flexWrap={"wrap"}>
-                {races.map(race => <RaceCard race={race} styles={{marginBottom: "8px"}}/>)}
+                {races.map(race => <RaceCard key={race.id} race={race} styles={{marginBottom: "8px"}}/>)}
             </Center>
         </>
     );
