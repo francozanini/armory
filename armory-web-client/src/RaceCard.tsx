@@ -47,10 +47,9 @@ export function RaceCard({race, styles}: { race: Race, styles?: React.CSSPropert
 function RaceSelectionModal({raceId, isOpen, onClose}: { raceId: string, isOpen: boolean, onClose: () => void }) {
     const [race, setRace] = useState<Race>();
     useEffect(() => {
-            axios.get<Race>(`http://localhost:8080/races/${raceId}`)
-                .then(response => setRace(response.data))
-        }
-    )
+        axios.get<Race>(`http://localhost:8080/races/${raceId}`)
+            .then(response => setRace(response.data))
+    }, [])
 
     return <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay/>
