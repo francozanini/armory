@@ -1,20 +1,7 @@
 import {Race} from "./Race";
-import React, {useEffect, useState} from "react";
-import {
-    Box,
-    Button,
-    Flex,
-    Image,
-    Modal,
-    ModalBody,
-    ModalCloseButton,
-    ModalContent,
-    ModalFooter,
-    ModalHeader,
-    ModalOverlay,
-    useDisclosure
-} from "@chakra-ui/react";
-import axios from "axios";
+import React from "react";
+import {Box, Flex, Image, useDisclosure} from "@chakra-ui/react";
+import {RaceSelectionModal} from "./RaceSelectionModal";
 
 export function RaceCard({race, styles}: { race: Race, styles?: React.CSSProperties }) {
     const {id, raceName, avatarUrl, sourceBook} = race;
@@ -44,28 +31,3 @@ export function RaceCard({race, styles}: { race: Race, styles?: React.CSSPropert
         </>);
 }
 
-function RaceSelectionModal({raceId, isOpen, onClose}: { raceId: string, isOpen: boolean, onClose: () => void }) {
-    const [race, setRace] = useState<Race>();
-    useEffect(() => {
-        axios.get<Race>(`http://localhost:8080/races/${raceId}`)
-            .then(response => setRace(response.data))
-    }, [])
-
-    return <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay/>
-        <ModalContent>
-            <ModalHeader>{race?.raceName}</ModalHeader>
-            <ModalCloseButton/>
-            <ModalBody>
-                {raceId}
-            </ModalBody>
-
-            <ModalFooter>
-                <Button colorScheme='blue' mr={3} onClick={onClose}>
-                    Close
-                </Button>
-                <Button variant='ghost'>Choose Race</Button>
-            </ModalFooter>
-        </ModalContent>
-    </Modal>
-}
