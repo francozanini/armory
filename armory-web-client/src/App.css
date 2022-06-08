@@ -1,3 +1,4 @@
-body {
-    width: 100%;
+html {
+    max-width: 1300px;
+    margin: auto;
 }
