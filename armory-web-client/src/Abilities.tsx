@@ -11,9 +11,9 @@ const Abilities = () => {
             <Table fontSize={"sm"}>
                 <Thead>
                     <Tr>
-                        <Th>Ability</Th>
-                        <Th isNumeric>Score</Th>
-                        <Th isNumeric>Mod</Th>
+                        <Th textAlign={"center"}>Ability</Th>
+                        <Th textAlign={"center"} isNumeric>Score</Th>
+                        <Th textAlign={"center"} isNumeric>Mod</Th>
                         <Th></Th>
                     </Tr>
                 </Thead>
