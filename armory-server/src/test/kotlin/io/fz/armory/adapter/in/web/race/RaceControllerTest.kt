@@ -35,7 +35,7 @@ internal class RaceControllerTest @Autowired constructor(
             .uri("/races/{id}", savedRace!!.mongoId)
             .exchange()
             .expectStatus().isOk
-            .expectBody<RaceDtoPeroConMasDetalles>()
-            .isEqualTo(RaceDtoPeroConMasDetalles.from(savedRace))
+            .expectBody<RaceView>()
+            .isEqualTo(RaceView.from(savedRace))
     }
 }
